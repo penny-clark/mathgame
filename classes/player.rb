@@ -8,6 +8,14 @@ class Player
   end
 
   def player_info
-    "#{name} has #{lives} lives."
+    puts "#{name} has #{lives} lives."
+  end
+
+  def lose_life
+    self.lives -= 1
+  end
+
+  def reset_lives
+    self.lives = 3
   end
 end
