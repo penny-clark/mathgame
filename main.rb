@@ -36,3 +36,5 @@ game.change_turns
 
 puts game.current_player.name
 puts game.next_player.name
+
+game.ask_question
