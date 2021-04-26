@@ -1,5 +1,7 @@
-require './game'
-require './player'
+require 'classes/game'
+require 'classes/player'
+require 'classes/questions'
+require 'classes/startgame'
 
 player1 = Player.new("Player 1")
 player2 = Player.new("Player 2")
