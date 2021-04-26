@@ -1,5 +1,6 @@
 class Question  
   attr_accessor :x, :y, :question_content, :answer
+
   def set_integer
     return rand(20)
   end
@@ -7,14 +8,14 @@ class Question
   def initialize
     @x = set_integer
     @y = set_integer
-    @question_content = "What is #{x} + #{y}?"
+    @question_content = "What does #{x} + #{y} equal?"
     @answer = x + y 
   end
 
   def question_reset
     self.x = set_integer
     self.y = set_integer
-    self.question_content = "What is #{x} + #{y}?"
+    self.question_content = "What does #{x} + #{y} equal?"
     self.answer = x + y 
   end
 end

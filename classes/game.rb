@@ -35,22 +35,35 @@ class Game
     end
   end
 
+  def play_again
+    puts "Play again? y / n"
+    print "> "
+    answer = $stdin.gets.chomp
+    if answer == "y"
+      player1.reset_lives
+      player2.reset_lives
+      self.current_player = player1
+      self.next_player = player2
+      self.ask_question
+    else
+      puts "Good bye!"
+    end
+  end
+
   def game_status
     if player1.lives == 0
       puts "Player 2 wins with a score of #{player2.lives}"
       puts "---- GAME OVER ----"
-      puts "Good bye!"
+      self.play_again
       player1.reset_lives
       player2.reset_lives
     elsif player2.lives == 0
       puts "Player 1 wins with a score of #{player1.lives}"
       puts "---- GAME OVER ----"
-      puts "Good bye!"
+      self.play_again
     else
       self.change_turns
       self.ask_question
     end
   end
-
-
 end
