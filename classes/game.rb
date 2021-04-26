@@ -26,9 +26,31 @@ class Game
     if self.question.answer == answer.to_i
       puts "YES! You are correct"
       puts "P1: #{player1.lives}/3 vs P2: #{player2.lives}/3"
+      self.game_status
     else
       puts "I am sorry, but that's just not right"
+      current_player.lose_life
+      puts "P1: #{player1.lives}/3 vs P2: #{player2.lives}/3"
+      self.game_status
     end
   end
+
+  def game_status
+    if player1.lives == 0
+      puts "Player 2 wins with a score of #{player2.lives}"
+      puts "---- GAME OVER ----"
+      puts "Good bye!"
+      player1.reset_lives
+      player2.reset_lives
+    elsif player2.lives == 0
+      puts "Player 1 wins with a score of #{player1.lives}"
+      puts "---- GAME OVER ----"
+      puts "Good bye!"
+    else
+      self.change_turns
+      self.ask_question
+    end
+  end
+
 
 end

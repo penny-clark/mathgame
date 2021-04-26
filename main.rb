@@ -16,25 +16,25 @@ player1.reset_lives
 player1.player_info
 
 puts "-------QUESTION CLASS TESTS-------"
-question = Question.new
+# question = Question.new
 
-puts question.question_content
-puts question.answer
+# puts question.question_content
+# puts question.answer
 
-question.question_reset
+# question.question_reset
 
-puts question.question_content
-puts question.answer
+# puts question.question_content
+# puts question.answer
 
 puts "--------GAME CLASS TESTS--------"
 game = Game.new(player1, player2)
 
-puts game.current_player.name
-puts game.next_player.name
+# puts game.current_player.name
+# puts game.next_player.name
 
-game.change_turns
+# game.change_turns
 
-puts game.current_player.name
-puts game.next_player.name
+# puts game.current_player.name
+# puts game.next_player.name
 
 game.ask_question
